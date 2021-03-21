@@ -27,28 +27,11 @@
 
 
 
-## Possibilities:
-- React , JS/TS static app -> githubpages
-- elixir app
-- clojure
-- flask/django 
-- golang
+## Author
+Pedro Blöss Braga
 
-
-
-## Links
-        <li>
-          <a href="https://www.linkedin.com/in/pedro-bl%C3%B6%C3%9F-braga-3263a1136/">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://github.com/pedroblossbraga">github</a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/playlist?list=PLG10GH7d9-LuxA4dLe-JuxBRXQ3vhElI_">Deep Learning - Teoria (Portuguese-Brasil) Youtube Playlist</a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/playlist?list=PLG10GH7d9-Lsqi_e--n8cDLB5WGRfVU7l">Deep Learning - Prática (Portuguese-Brasil) Youtube Playlist</a>
-        </li>
+## License
+- MIT
 
 
 
