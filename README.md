@@ -32,6 +32,3 @@ Pedro Blöss Braga
 
 ## License
 - MIT
-
-
-
