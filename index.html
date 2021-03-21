@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<style>.body{ margin: 0; margin-left: 0px; margin-right: 0px;} </style>
+
+<!-- Bulma-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+<!-- Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- Title-->
+
+
+<div style="text-align:center; background-color:black;"><h style="font-size:80px; font-family: Eb Garamond;text-align:center;background-color:black;color:white;width:750px;height:160px">Pedro Blöß Braga</h></div>
+
+<script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = Date();
+  }
+</script>
+
+<script>
+  function BigImg(x){
+    x.style.height = "90px";
+    x.style.width = "90px";
+  }
+  function RegularImg(x){
+    x.style.height = "75px";
+    x.style.width = "75px";
+  }
+</script>
+
+  <style>
+    .parallax {
+      /* The image used */
+      background-image: url("https://i.pinimg.com/originals/42/fc/07/42fc0770ab99e52b41dcac3555f47b8e.jpg");
+    
+      /* Set a specific height */
+      min-height: 500px;
+    
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+  <div class="parallax" ></div>
+
+
+<div><p style="font-size:20px; font:Mazius;margin-bottom: 40px;margin-left:10px">Mathematics ⟺ Life.</p></div>
+
+
+
+  <script>
+    function drawCircle(selector, center, radius, angle, x, y) {
+  var total = $(selector).length;
+  var alpha = Math.PI * 2 / total;
+  angle *= Math.PI / 180;
+
+  $(selector).each(function(index) {
+    var theta = alpha * index;
+    var pointx  =  Math.floor(Math.cos( theta + angle ) * radius);
+    var pointy  = Math.floor(Math.sin( theta + angle ) * radius );
+
+    $(this).css('margin-left', pointx + x + 'px');
+    $(this).css('margin-top', pointy + y + 'px');
+  });
+}
+  </script>
+  <style>
+    .container { 
+  width:800px; margin:0 auto;
+}
+.box {    
+  -moz-border-radius:150px;
+  -webkit-border-radius:150px;
+  background-position:0px 0px;
+  background-color:#ccc;
+  background-repeat:no-repeat;
+  float:left;
+  height:120px;
+  margin:18px;
+
+  width:120px;
+  padding:5px;
+}
+  </style>
+
+
+<style>
+    /*.langs{width:500px; margin:0 auto;}*/
+
+    .langs{text-align:left; background:#666;}
+</style>
+</style>
+  <div class = "columns" style="margin-left: 80px;margin-top: 60px;" class="langs">
+    <div class="column" >
+      <div class="container" style="width: 125px; margin-right: 0px;">
+        <div class = "rows">
+          <div class="row">
+            <a href="https://www.w3schools.com/js/DEFAULT.asp">
+                <img href="https://www.w3schools.com/js/DEFAULT.asp" onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px;" src="https://cursos.dankicode.com/app/Views/public/mkt/javascriptcompleto/images/js-icon.png" class="box">
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://www.python.org/">
+                <img onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" class="box">
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://golang.org/">
+                <img onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px" src="https://user-images.githubusercontent.com/727262/40395108-6bcc327a-5e1e-11e8-9f76-3917983b8563.png" class="box">
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://clojure.org/">
+                <img onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Clojure_logo.svg/1024px-Clojure_logo.svg.png" class="box">
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://elixir-lang.org/">
+                <img onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px" src="https://www.pngitem.com/pimgs/m/330-3300789_elixir-programming-language-logo-hd-png-download.png" class="box">
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://julialang.org/">
+                <img onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Julia_Programming_Language_Logo.svg/1280px-Julia_Programming_Language_Logo.svg.png" class="box">
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://www.r-project.org/">
+                <img onmouseover="BigImg(this)" onmouseout="RegularImg(this)" style="background-color:white; height: 75px; width: 75px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" class="box">
+            </a>
+          </div>    
+        </div>
+      </div>
+    </div>
+    <div class="column" style="width: 800px;">
+      <div class="rows">
+        <div class="row" style="font-family: Courier New; margin-top: 30px;">
+          <h1 style="font-size: 21px; margin-bottom:5px;">Javascript</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 50px">
+            console.log('How do you do?')
+        </div>
+        <div class="row" style="font-family: Courier New; margin-top: 40px;">
+          <h1 style="font-size: 21px;">Python</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 50px">
+            print('Hey!')
+        </div>
+        <div class="row" style="font-family: Courier New; margin-top: 30px;">
+          <h1 style="font-size: 21px;">Go</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 20px">
+            package main <br>
+          import "fmt" <br>
+          func main(){ 
+          fmt.Println("Sup!")
+          }
+        </div>
+        <div class="row" style="font-family: Courier New; margin-top: 20px;">
+          <h1 style="font-size: 21px;">Clojure</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 50px">
+            (println "Salutations, my lord")
+        </div>
+        <div class="row" style="font-family: Courier New; margin-top: 50px;">
+          <h1 style="font-size: 21px;">Elixir</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 50px">
+            IO.puts "Fala, dev!"
+        </div>
+        <div class="row" style="font-family: Courier New; margin-top: 55px;">
+          <h1 style="font-size: 21px;">Julia</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 50px">
+            println("Hallo.")
+        </div>
+        <div class="row" style="font-family: Courier New; margin-top: 50px;">
+          <h1 style="font-size: 21px;">R</h1>
+        </div>
+        <div class="row" style="width: 350px;font-family: Courier New;margin-bottom: 50px">
+            print("Olá!")
+        </div>
+      </div>
+    </div>
+    <div class="column" style="width: 1000px;margin-left:0;margin-right: 100px;">
+      <div style="margin-bottom: 80px;margin-top: 20px;margin-right: 100px;margin-left: 160px;">
+        <h1 style="margin-bottom: 30px;">Welcome!</h1>
+        Greetings. This is my personal website. <br>
+        Here you will find information about some of my work and interests.
+      <br>
+      </div>
+
+
+      <div class="row" style="width: 1000px;">
+        <div style="margin-bottom: 80px;margin-top: 60px;margin-right: 50px;margin-left: 160px;">
+          <h1 style="margin-bottom: 30px;">Portifolio & Contact</h1>
+
+            <div class="list-group" id="list-tab" role="tablist">
+              <a href="https://www.linkedin.com/in/pedro-bl%C3%B6%C3%9F-braga-3263a1136/" class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">
+                <img style="width:40px;height:40px;margin-right: 30px;" src="data:image/png;base64,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">  
+                LinkedIn
+              </a>
+              <a href="https://github.com/pedroblossbraga" class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
+                <img style="width:40px;height:40px;margin-right: 30px;" src="http://pngimg.com/uploads/github/github_PNG40.png">
+                Github
+              </a>
+              <a href="https://www.youtube.com/channel/UCRYy_ik-GjwmAOJgncsXvGQ" class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">
+                <img style="width:45px;height:35px;margin-right: 30px;" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png">
+                Youtube Channel
+              </a>
+              <a href="mailto:pedro.bloss.braga@usp.br?subject=Hello,%20Pedro!" class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">
+                <img style="width:45px;height:35px;margin-right: 30px;" src="https://logosmarcas.net/wp-content/uploads/2020/11/Gmail-Logo.png">  
+                Email
+              </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="width:800px;margin-right: 50px;margin-left: 30px;">
+        <a href = "https://github.com/pedroblossbraga/Deep-Learning-Regression">
+            <img style="width:600px;height:300px" src="https://raw.githubusercontent.com/pedroblossbraga/Deep-Learning-Regression/master/images/flrylstmpredictions.png">
+        </a>
+    </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+    <div class="columns">
+        <div class="column">
+            <h1 style="margin-left: 100px;margin-top: 50px; margin-bottom: 30px;margin-right: 100px;">
+                Topics of Interest</h1>
+            <div class="list-group list-group-flush" style="margin-left: 100px;">
+                <a class="list-group-item list-group-item-action">
+                    Applied Mathematics
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Statistics
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Machine Learning
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Web Development
+                </a>
+            </div>
+        </div>
+        <div class="column">
+            <h1 style="margin-left: 100px;margin-top: 50px; margin-bottom: 30px;margin-right: 150px;">
+                Work projects </h1>
+            <div class="list-group list-group-flush" style="margin-left: 100px;">
+                <a class="list-group-item list-group-item-action">
+                    Regression Ensemble Model: pre-processing, hyperparameter tuning
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Name similarity Analysis: optimization of search and similarity metrics
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Recommendation system: Next basket suggestion (Retail)
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Data Analysis
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Web Scraping: Extracting information from the internet.
+                </a>
+                <a class="list-group-item list-group-item-action">
+                    Web Crawling and automation
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+  <h1 style="text-align:center; margin-left: 100px;margin-top: 50px; margin-bottom: 30px;margin-right: 100px;">
+    Projects & Links</h1>
+    <div class="columns">
+        <div class="column">
+            <div class="list-group list-group-flush" style="margin-left: 100px;">
+                <a href="https://www.youtube.com/playlist?list=PLG10GH7d9-LuxA4dLe-JuxBRXQ3vhElI_" class="list-group-item list-group-item-action">
+                  Deep Learning - Teoria (Portuguese) <br>
+                  <img src="https://logosmarcas.net/wp-content/uploads/2020/04/YouTube-Logo.png" style="width: 80px; height: 40px;">
+                  Playlist 
+                  <img src="https://www.ambientelivre.com.br/images/logos_open_source/tensorflow_logo.png" style="width: 120px; height: 50px;margin-right: 20px;margin-left: 20px;">
+                </a>
+                <a href="https://www.youtube.com/watch?v=aeb_FqoP1Os&list=PLG10GH7d9-Lsqi_e--n8cDLB5WGRfVU7l" class="list-group-item list-group-item-action">
+                  Deep Learning - Regressão (Portuguese) <br>
+                  <img src="https://logosmarcas.net/wp-content/uploads/2020/04/YouTube-Logo.png" style="width: 80px; height: 40px;">
+                 Playlist
+                 <img src="https://www.ambientelivre.com.br/images/logos_open_source/tensorflow_logo.png" style="width: 120px; height: 50px;margin-right: 20px;margin-left: 20px;">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;">
+                </a>
+                <a href="https://github.com/pedroblossbraga/Deep-Learning-Regression/blob/master/TF_Regress%C3%A3o_Previs%C3%A3o_do_Consumo_de_Combust%C3%ADvel.ipynb" class="list-group-item list-group-item-action">
+                  Deep Learning Regression Example source code <br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                  <img src="https://www.ambientelivre.com.br/images/logos_open_source/tensorflow_logo.png" style="width: 120px; height: 50px;margin-right: 20px;margin-left: 20px;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;">
+                 </a>
+                <a href="https://github.com/pedroblossbraga/Machine-Learning-with-Python/blob/main/Gradient_Descent_Implementation.ipynb" class="list-group-item list-group-item-action">
+                  Gradient Descent algorithm <br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;margin-left: 20px;">
+                </a>
+                <a href="https://github.com/pedroblossbraga/GoCRUD" class="list-group-item list-group-item-action disabled">
+                  Golang API (CRUD)<br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                  <img src="https://user-images.githubusercontent.com/727262/40395108-6bcc327a-5e1e-11e8-9f76-3917983b8563.png" style="width: 40px; height: 40px;margin-right: 20px;margin-left: 20px;">
+                </a>
+        
+                <a href="http://github.com/pedroblossbraga/Single_Vahttps://github.com/pedroblossbraga/Getting_Started_With_GOlue_Decomposition-SVD/blob/main/SVD_PCA.pdf" class="list-group-item list-group-item-action disabled">
+                  Single Value Decomposition (SVD) and <br>
+                  Principle Component Analysis (PCA) text<br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo</a>
+        
+                <a href="https://github.com/pedroblossbraga/Machine-Learning-with-Python/blob/main/K_Fold_Cross_Validation.ipynb" class="list-group-item list-group-item-action disabled">
+                  K-Fold Cross Validation<br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;margin-left: 20px;">
+                </a>
+              </div>
+        </div>
+        <div class="column">
+            <div class="list-group list-group-flush" style="margin-left: 100px;">
+                <a href="https://github.com/pedroblossbraga/LearningJS/blob/main/index-emerging-javascript.js" class="list-group-item list-group-item-action">
+                  Learning JS <br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                  <img src="https://cursos.dankicode.com/app/Views/public/mkt/javascriptcompleto/images/js-icon.png" style="width: 40px; height: 40px;margin-right: 20px;margin-left: 20px;">
+                </a>
+                <a href="https://github.com/pedroblossbraga/SVR_SupportVectorRegression/blob/main/Estudo_SVR_Da_Classificacao_para_a_Regressao.pdf" class="list-group-item list-group-item-action">
+                  Support Vector Regression (SVR) <br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                </a>
+                <a href="https://github.com/pedroblossbraga/Getting_Started_With_GO" class="list-group-item list-group-item-action">
+                    Getting Started With Go<br>
+                    <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                    Github Repo
+                    <img src="https://user-images.githubusercontent.com/727262/40395108-6bcc327a-5e1e-11e8-9f76-3917983b8563.png" style="width: 40px; height: 40px;margin-right: 20px;margin-left: 20px;">
+                </a>
+                <a href="https://github.com/pedroblossbraga/Getting_Started_With_GO" class="list-group-item list-group-item-action">
+                    Machine Learning with R: KNN, K-means, K-medoids, Neural Net <br>
+                    <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                    Github Repo
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" style="width: 36px; height: 36px;margin-right: 20px;margin-left: 20px;">
+                </a>
+                <a href="https://github.com/pedroblossbraga/Convolutional-Neural-Nets/blob/master/ConvNet-Smalldatasets-5.2%20(1).ipynb" class="list-group-item list-group-item-action">
+                    cats and dogs Convolutional Neural Net Classification <br>
+                    <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                    Github Repo
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;margin-left: 20px;">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEXQAAD////NAAD13Nz87+/wwMD12dnKAADuuLjXRUX9+Pjrra3XQkLvu7vWPz/vvr7ppKTcZGTbXl7aWFjZUlLYS0vonZ3mlpb55OTfdHTebW3xxsb00NDdZ2fts7Pmk5PTISHjhobhfHzSHBzVMTHRDw/VNTXfcHDUKip+QHsdAAAFFElEQVR4nO3da1fbMAwG4NilKQQYjDuU+4Dx/3/hekrHSmOJ1NbFyvR+pRg9JzmQRIppwtjTaBfAnv9D2LWTcabtVsJ2FseZWbsSTmIzzsSJC63HhfbjQvtxof240H5caD8utB8X2o8L7ceF9uNC+3Gh/bjQflxoPy60Hxfajwvtx4X240L7caH9kAm/DiKRLVS4WEMoPJyuZTd7sXgzn25kflpUGJFwucxa2szV4nVisJCgtGJhvN2sap61XPydAIbwo6A0GmGc9qs6ylgv3iSBWWv9W5RAGPdTZR1vvSBwBBdRF+6kqtp6QegILnJRcoJVI0SAoRuDEAMuKsxPLcJ4hwGn9o8hDsz70/N36SqEjMA6hHynaFOHkBVYg5AXWIEw/sSARRdsH+trC7mB6kJ2oLYwnmDAQ4onK7pCAaCuUAKoKsSB+c96Nn6KnlAGqCgUAuoJ4ykGvKd7Pq0lFANqCfFTlBKoJJQ7gkpCSaCKUBSoIYxnGHCfussnLxQGygulgeJCcaC0UB4oLFQAygpx4PbtuGHVCQrjuQJQUqgDFBQqAeWEWkAxoRpQSogDS9r031cnIox7akAZoSZQRKgKlBDqAgWEOPCSG8gvjAe6QHahOpBbqA9kFsYf6kBeIQ58EAGyCnHg1YyQgVXHKESBITxZP4btIw4M4Z3QgVTHJtzpvhNeGf9NMyDsV2zL6jSF4Y1QAlanKtwxfU0zKDwPgb9WpysMZ4QWoDplYcl7BgOrUxaSjB/i1WkLw53ZpxiDQ6hJVqcvvLX6rG14no0+L90ivwhB/erEhBP41a3cd2qHVSclXNwQH4Ff5LzdlxIuDxN8P/VCJ+pVJyP8+H0JDyQy3irKCFev9sRd8BMWe8Br+RxpjvB5ek7jSVQnIFy7RYLHTdhuFQWE6ydgvAc/Rj11+fkj2YVfn2wjnz0pxqSr4xZuPhWFG/pdIQWqjlnYu+ZMb8CwTNn7vmB1vMLrxHDbVp8uD68weXeL9IRf8yFwdZzC0/QQ7TEo5LhV5BSeQZPe8HnK0K1hFO6BKyJNqcfsKsDq+HpP8ILxAhTSX4IrvRV0BRLJuzVKb3a9gMKyTaFS1Sm9u3YJCqkvwdXeP5ykvmcZ4m6N2juk76AwlO1A16tO7S3ZB1BI261RfNMZPk9JuzWKb6sjsxo3hETN9/GfYGJ2LYkfo7mnQgsKCS/BVffFeIUPIl23Rnfnj2eYSNatUd69pbcr6FbfPqw63R14kPOUqlujvcdQas/ZVYgGptT3iZqDQqJLcG1h08AHkaZboy6EN54l6taoC9nPU30hdp5S7DRUgxDZN5GgW1ODEBlhIOjW1CDERhjKuzV1CJE9lYq7NXUIkRGG4m5NHUJshKF0YKoSYYNsrFTYralFiIwwFL5bU4sQa7mVdWuqESKjNmXdmnqEyAhDOMiurSYhdp6WXIJXJMRGGAq6NTUJkRGGgm5NTULsPM2/BK9KiI0wZO8+X5cQGWEI17nVVSXERhhyN7+uTNi8gcLH3Oo05mmwtaARhuwBW5L/2ZXc/X8vsyDgPM2+TaT5r2QJ4kHueukRhvw/+UT/Wa73GCIbCIwwFNRGIuwdxXxgujVccHdBJNxcVfG7e6uxCGuKC+3HhfbjQvtxof240H5caD8utB8X2o8L7ceF9uNC+3Gh/bjQflxoPy60Hxfajwvtx4X240L7caH9uNB+PoXtLI4zs3Yl7NrJONN2K+G440L7+QPK4U+zmdKNJQAAAABJRU5ErkJggg==" style="width: 30px; height: 30px;margin-right: 20px;margin-left: 20px;">
+                </a>
+                <a href="https://github.com/pedroblossbraga/Python-games" class="list-group-item list-group-item-action">
+                  Sudoku Solver - backtracking<br>
+                  <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                  Github Repo
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;margin-left: 20px;">
+              </a>
+              <a href="https://github.com/pedroblossbraga/ObjectOrientedProgrammingAlgorithms" class="list-group-item list-group-item-action disabled">
+                Sorting Algorithms: <br>
+                Selection Sort, Bubble Sort, Merge Sort, Quick Sort, Insertion Sort<br>
+                <img src="http://pngimg.com/uploads/github/github_PNG40.png" style="width: 30px; height: 30px;margin-top: 10px;">
+                Github Repo
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 25px; height: 25px;margin-right: 20px;margin-left: 20px;">
+              </a>
+              <a>
+                Access my github for more.
+              </a>
+            </div>
+        </div>
+    </div>  
+
+  <footer>Copyright - MIT license</footer>
