@@ -26,7 +26,7 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Applied Mathematician and Data Scientist"
   location         : "Erlangen, Germany"
-  employer         : "Friedrich-Alexander Universität Erlangen-Nürnberg"
+  employer         : "(FAU) Friedrich-Alexander Universität Erlangen-Nürnberg"
   uri              : # URL
   email            : "pedro.bloess@fau.de" 
 
@@ -254,9 +254,9 @@ defaults:
       type: teaching
     values:
       layout: single
-      author_profile: true
-      share: true
-      comments: true
+      author_profile: false
+      share: false
+      comments: false
   # _publications
   - scope:
       path: ""
@@ -281,8 +281,8 @@ defaults:
       type: talks
     values:
       layout: talk
-      author_profile: true
-      share: true
+      author_profile: false
+      share: false
 
 
 # Sass/SCSS
