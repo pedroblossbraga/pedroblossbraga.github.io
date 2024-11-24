@@ -55,7 +55,6 @@ Given observed positions, and taking into account the dynamics $(x, \dot{x}, \dd
 <!-- \parencite{KALMAN} -->
 
 \begin{align}
-    \LARGE
     \underbrace{\hat{x}_{k-1|k-1}}_{\substack{\text{measurement} \\ \text{at } k-1}}
     \underbrace{\to}_{\substack{
     \text{state update} \\ \text{(velocities, position, etc)}
@@ -83,6 +82,7 @@ To simulate observed measurements, we take the Hohmann transfer $x_{h}, y_{h}$ v
 \end{frame}
 
 ### How does the Kalman-Filter takes into account the state?
+
 Example with nonconstant velocity, and constant acceleration:
 \begin{align}
 \begin{cases}
@@ -92,7 +92,6 @@ Example with nonconstant velocity, and constant acceleration:
     \hat{\ddot{x}}_{k+1, k} = \hat{\ddot{x}}_{k, k} \\
 \end{cases}.
 \end{align}
-\dbgpause
 Then, the state update is:
 \begin{align}
 \begin{bmatrix}
@@ -286,13 +285,11 @@ A = \begin{bmatrix}
 0 & 0 & 0 & 1 \\
 \end{bmatrix}, 
 & \quad \quad 
-\Large
 H = \begin{bmatrix}
     1 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 \\
 \end{bmatrix},
 & 
-\Large
 \hat{x} = \begin{bmatrix}
     x_k \\ y_k \\ \dot{x}_k \\ \dot{y}_k
 \end{bmatrix} 
@@ -301,7 +298,6 @@ H = \begin{bmatrix}
 \end{bmatrix} 
 \end{align}
 \begin{align*}
-    \Large
     Q = \sigma_Q^2 \cdot \mathbb{I}_{4 \times 4}, 
     & \quad \text{(process noise, dynamics uncertainty)}\\
     R = \sigma_R^2 \cdot \mathbb{I}_{2 \times 2}, 
