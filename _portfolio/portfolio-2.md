@@ -51,7 +51,6 @@ Given observed positions, and taking into account the dynamics $(x, \dot{x}, \dd
 - $P$: **Initial estimate** covariance, uncertainty of initial estimate.
 
 
-
 ### Kalman-Filter: Notation
 <!-- \parencite{KALMAN} -->
 
