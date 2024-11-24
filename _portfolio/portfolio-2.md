@@ -41,13 +41,13 @@ Examples:
 ### Kalman-Filter: Predicting the Next Position
 <!-- \parencite{KALMAN} \parencite{how_NASA_used_the_KF_Apollo} -->
 
-Given observed positions, and taking into account the dynamics $(x, \dot{x}, \ddot{x})$, \textbf{we want a method that can accurately estimate the next position}, considering perturbations in our system.
+Given observed positions, and taking into account the dynamics $(x, \dot{x}, \ddot{x})$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
 
 ### Kalman-Filter: Embedding Uncertainty
 <!-- \parencite{KALMAN} \parencite{sheldon_applied_prob} -->
-- $Q$: Process noise covariance, uncertainty about the system \textbf{dynamics}.
-- $R$: \textbf{Measurement} noise covariance.
-- $P$: \textbf{Initial estimate} covariance, uncertainty of initial estimate.
+- $Q$: Process noise covariance, uncertainty about the system **dynamics**.
+- $R$: **Measurement** noise covariance.
+- $P$: **Initial estimate** covariance, uncertainty of initial estimate.
 
 
 
@@ -55,22 +55,17 @@ Given observed positions, and taking into account the dynamics $(x, \dot{x}, \dd
 <!-- \parencite{KALMAN} -->
 
 \begin{align}
-    \underbrace{\hat{x}_{k-1|k-1}}_{\substack{\text{measurement} \\ \text{at } k-1}}
-    \underbrace{\to}_{\substack{
-    \text{state update} \\ \text{(velocities, position, etc)}
-    }}
+    \underbrace{\hat{x}_{k-1|k-1}}_{\text{measurement at } k-1}
+    \underbrace{\to}_{
+    \text{state update (velocities, position, etc)}
+    }
     \hat{x}_{k|k-1} 
     \underbrace{\to}_{
-        \substack{
-        \text{incorporate noise}
-        \\
-        \text{updated covariance}
-        }
+        \text{incorporate noise, updated covariance}
     } 
     \underbrace{\hat{x}_{k|k}}_{
-    \substack{
-    \text{measurement} \\ \text{at } k
-    }}
+    \text{measurement at } k
+    }
 \end{align}
 
 ### Kalman-Filter: Estimation from Observed Measurements
@@ -139,18 +134,15 @@ Then, the state update is:
 The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
 
 \begin{align}
-\hat{x}_{k|k-1} &= \underbrace{A}_{\substack{
-\text{state update} \\
-\text{update }x, \dot{x}, \ddot{x}
-}} \hat{x}_{k-1|k-1},
+\hat{x}_{k|k-1} &= \underbrace{A}_{
+\text{state update }x, \dot{x}, \ddot{x}
+} \hat{x}_{k-1|k-1},
 \\
-\underbrace{P_{k|k-1}}_{\substack{
-\text{update covariance}\\
-\text{uncertainty of estimate}
-}} &= A P_{k-1|k-1}A^T + \underbrace{Q}_{\substack{
-\text{add process noise} \\
-\text{uncertainty of dynamics}
-}}.
+\underbrace{P_{k|k-1}}_{
+\text{update covariance, uncertainty of estimate}
+} &= A P_{k-1|k-1}A^T + \underbrace{Q}_{
+\text{add process noise, uncertainty of dynamics}
+}.
 \end{align}
 
 ### Kalman-Filter: Measurement Update
@@ -160,20 +152,18 @@ The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
 The measurement update step updates the measures from $k|k-1$ to $k|k$:
 
 \begin{align}
-    \underbrace{K_k}_{\substack{
+    \underbrace{K_k}_{
         \text{Kalman gain}
-        }} 
+        } 
     &= P_{k|k-1} H^T (H P_{k|k-1} H^T 
-    + \underbrace{R}_{\substack{
-        \text{measurement} \\
-        \text{noise}
-        }}
+    + \underbrace{R}_{
+        \text{measurement noise}
+        }
     )^{-1},
     \\
-    \hat{x}_{k|k} &= \hat{x}_{k|k-1}  + K_k (\underbrace{z_k}_{\substack{
-        \text{measurement}\\
-        \text{vector}
-        }} 
+    \hat{x}_{k|k} &= \hat{x}_{k|k-1}  + K_k (\underbrace{z_k}_{
+        \text{measurement vector}
+        } 
     - H \hat{x}_{k|k-1}),
     \\
     P_{k|k} &= (\mathbb{I} - K_k H) P_{k|k-1}.
@@ -228,7 +218,7 @@ Then, the state update is:
 \end{figure} -->
 <img src="images/kf_vel_approx_photo.png" width="250" />
 
--  Given the KF estimated positions, we can \textbf{approximate the velocities}, with the simple derivative.
+-  Given the KF estimated positions, we can approximate the velocities, with the simple derivative.
 -  It is assumed that the acceleration is incorporated in each velocity step.
 
 ### Estimating the Actual Kalman-Filter Velocity
