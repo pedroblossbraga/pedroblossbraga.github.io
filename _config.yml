@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Pedro Blöss Braga Personal Website"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Pedro Blöss Braga"
 description              : &description "personal description"
@@ -279,8 +279,8 @@ defaults:
       type: talks
     values:
       layout: talk
-      author_profile: false
-      share: false
+      author_profile: true
+      share: true
 
 
 # Sass/SCSS
