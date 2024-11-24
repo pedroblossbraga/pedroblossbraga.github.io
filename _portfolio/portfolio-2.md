@@ -75,15 +75,15 @@ Given observed positions, and taking into account the dynamics $(x, \dot{x}, \dd
 
 ### Kalman-Filter: Estimation from Observed Measurements
 To simulate observed measurements, we take the Hohmann transfer $x_{h}, y_{h}$ vectors of positions and add a Gaussian noise with arbitrary variance $\sigma^2$:
+
 \begin{align}
     x_{\text{obs}} = x_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) \\
     y_{\text{obs}} = y_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) 
 \end{align}
-\end{frame}
 
 ### How does the Kalman-Filter takes into account the state?
-
 Example with nonconstant velocity, and constant acceleration:
+
 \begin{align}
 \begin{cases}
     \hat{x}_{k+1,k} = \hat{x}_{k,k} + \hat{\dot{x}}_{k,k} \Delta t + \frac{1}{2} \hat{\ddot{x}}_{k,k} \Delta t^2 
@@ -92,7 +92,9 @@ Example with nonconstant velocity, and constant acceleration:
     \hat{\ddot{x}}_{k+1, k} = \hat{\ddot{x}}_{k, k} \\
 \end{cases}.
 \end{align}
+
 Then, the state update is:
+
 \begin{align}
 \begin{bmatrix}
     \hat{x}_{k+1, k} \\
@@ -135,6 +137,7 @@ Then, the state update is:
 <!-- \parencite{NASA_Kalman_Filter}  \parencite{WelchB95} -->
 
 The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
+
 \begin{align}
 \hat{x}_{k|k-1} &= \underbrace{A}_{\substack{
 \text{state update} \\
@@ -153,7 +156,9 @@ The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
 ### Kalman-Filter: Measurement Update
 <!--     \parencite{NASA_Kalman_Filter}
     \parencite{WelchB95} -->
+
 The measurement update step updates the measures from $k|k-1$ to $k|k$:
+
 \begin{align}
     \underbrace{K_k}_{\substack{
         \text{Kalman gain}
@@ -177,7 +182,9 @@ The measurement update step updates the measures from $k|k-1$ to $k|k$:
 where $z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$.
 
 ### Kalman-Filter: Using Pre-Computed Values
+
  Using pre-computed velocities $\{ v_k \}_k$:
+ 
 \begin{align}
 \begin{cases}
     \hat{x}_{k+1,k} = \hat{x}_{k,k} + \color{red}{v_k}  \color{black} \Delta t 
@@ -186,8 +193,9 @@ where $z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$.
     \text{ same for } (y, \dot{y})
 \end{cases}.
 \end{align}
-\dbgpause   
+
 Then, the state update is:
+
 \begin{align}
 \begin{bmatrix}
     \hat{x}_{k+1, k} \\
@@ -220,7 +228,6 @@ Then, the state update is:
 \end{figure} -->
 <img src="images/kf_vel_approx_photo.png" width="250" />
 
-
 -  Given the KF estimated positions, we can \textbf{approximate the velocities}, with the simple derivative.
 -  It is assumed that the acceleration is incorporated in each velocity step.
 
@@ -235,6 +242,7 @@ Then, the state update is:
 
 
 The presence of noise is noticeable in the velocity estimates.
+
 ### Estimating the actual Kalman-Filter velocity
 <!-- \begin{figure}
     \centering
@@ -271,8 +279,6 @@ The presence of noise is noticeable in the velocity estimates.
 
 -  D'agostino and Pearson normality test results for the position errors: $\text{Test Statistic}=1.642$, and $p=0.440$.
 -  For a significance value of $\alpha=0.05$, we fail to reject H0, so we infer normality, since $p>\alpha$.
-
-
 
 ## Kalman-Filter: Simulation Parameters
 <!-- \parencite{sheldon_applied_prob} -->
