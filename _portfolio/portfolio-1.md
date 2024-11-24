@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Lead Conversion model"
+excerpt: "Imbalanced Classification of Lead Conversion.<br/><img src='/images/lead conversion model.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+In this project, I built a Machine Learning model to estimate the probability of conversion of potential customers (leads), with Imbalanced Learning techniques, and producing an increase in the conversion rate of up to 3x in the first month in production.
