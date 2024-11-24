@@ -45,6 +45,7 @@ Given observed positions, and taking into account the dynamics $(x, \dot{x}, \dd
 
 ### Kalman-Filter: Embedding Uncertainty
 <!-- \parencite{KALMAN} \parencite{sheldon_applied_prob} -->
+
 - $Q$: Process noise covariance, uncertainty about the system **dynamics**.
 - $R$: **Measurement** noise covariance.
 - $P$: **Initial estimate** covariance, uncertainty of initial estimate.
@@ -98,9 +99,7 @@ Then, the state update is:
     \hat{y}_{k+1, k} \\
     \hat{\dot{y}}_{k+1, k} \\
     \hat{\ddot{y}}_{k+1, k} 
-\end{bmatrix}
-= 
-\begin{bmatrix}
+\end{bmatrix} = \begin{bmatrix}
 1 & \Delta t & 0.5 \Delta t^2 & 0 & 0 & 0 \\
 0 & 1 & \Delta t & 0 & 0 & 0 \\
 0 & 0 & 1 & 0 & 0 & 0 \\
@@ -192,8 +191,7 @@ Then, the state update is:
     \hat{y}_{k+1, k} \\
     \hat{\dot{x}}_{k+1, k} \\
     \hat{\dot{y}}_{k+1, k} \\
-\end{bmatrix}
-= 
+\end{bmatrix} = 
 \begin{bmatrix}
 1 & 0 & \Delta t & 0 \\
 0 & 1 & 0 & \Delta t \\
@@ -293,13 +291,14 @@ H = \begin{bmatrix}
     x_k \\ y_k \\ v^{(x)}_k \\ v^{(y)}_k
 \end{bmatrix} 
 \end{align}
-\begin{align*}
+
+\begin{align}
     Q = \sigma_Q^2 \cdot \mathbb{I}_{4 \times 4}, 
     & \quad \text{(process noise, dynamics uncertainty)}\\
     R = \sigma_R^2 \cdot \mathbb{I}_{2 \times 2}, 
     & \quad\text{(measurement noise)}\\
     P = \sigma_P^2 \cdot \mathbb{I}_{4 \times 4}, 
     & \quad\text{(estimates uncertainty)}
-\end{align*}
+\end{align}
 with $\sigma_Q^2 = 10^{-3}$, $\sigma_R^2 = 0.5$, and $\sigma_P^2 = 500$.
 
