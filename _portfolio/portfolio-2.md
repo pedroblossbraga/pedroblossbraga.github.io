@@ -224,7 +224,7 @@ $$
     \caption{Illustration of KF velocity estimate.}
     % \label{fig:enter-label}
 \end{figure} -->
-<img src="/images/kf_vel_approx_photo.png" width="200" height="200" />
+<img src="/images/kf_vel_approx_photo.png" width="300" height="300" />
 
 -  Given the KF estimated positions, we can approximate the velocities, with the simple derivative.
 -  It is assumed that the acceleration is incorporated in each velocity step.
