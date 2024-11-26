@@ -153,7 +153,8 @@ $$
 \hat{x}_{k \vert k-1} = \underbrace{A}_{
 \text{state update }x, \dot{x}, \ddot{x}
 } \hat{x}_{k-1 \vert k-1},
-\\
+$$
+$$
 \underbrace{P_{k \vert k-1}}_{
 \text{update covariance, uncertainty of estimate}
 } = A P_{k-1 \vert k-1}A^T + \underbrace{Q}_{
@@ -176,12 +177,14 @@ $$
     \text{measurement noise}
     }
 )^{-1},
-\\
+$$
+$$
 \hat{x}_{k \vert k} = \hat{x}_{k \vert k-1}  + K_k (\underbrace{z_k}_{
     \text{measurement vector}
     } 
 - H \hat{x}_{k \vert k-1}),
-\\
+$$
+$$
 P_{k \vert k} = (\mathbb{I} - K_k H) P_{k \vert k-1}.
 $$
 
@@ -295,12 +298,14 @@ A = \begin{bmatrix}
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1 \\
 \end{bmatrix}, 
-& \quad \quad 
+$$
+$$
 H = \begin{bmatrix}
     1 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 \\
-\end{bmatrix},
-& 
+\end{bmatrix}
+$$
+$$
 \hat{x} = \begin{bmatrix}
     x_k \\ y_k \\ \dot{x}_k \\ \dot{y}_k
 \end{bmatrix} 
@@ -313,5 +318,5 @@ $$
 - $$R = \sigma_R^2 \cdot \mathbb{I}_{2 \times 2}$$ (measurement noise)
 - $$P = \sigma_P^2 \cdot \mathbb{I}_{4 \times 4}$$ (estimates uncertainty)
 - 
-with $$\sigma_Q^2 = 10^{-3}$, $\sigma_R^2 = 0.5$, and $\sigma_P^2 = 500$$.
+with $$\sigma_Q^2 = 10^{-3}$$, $$\sigma_R^2 = 0.5$$, and $$\sigma_P^2 = 500$$.
 
