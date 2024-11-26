@@ -42,7 +42,7 @@ Examples:
 ### Kalman-Filter: Predicting the Next Position
 <!-- \parencite{KALMAN} \parencite{how_NASA_used_the_KF_Apollo} -->
 
-Given observed positions, and taking into account the dynamics $$x, \dot{x}, \ddot{x})$$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
+Given observed positions, and taking into account the dynamics $$(x, \dot{x}, \ddot{x})$$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
 
 ### Kalman-Filter: Embedding Uncertainty
 <!-- \parencite{KALMAN} \parencite{sheldon_applied_prob} -->
@@ -53,10 +53,10 @@ Given observed positions, and taking into account the dynamics $$x, \dot{x}, \dd
 
 
 ### Kalman-Filter: Notation
-- measurement at $k-1$: $\hat{x}_{k-1 \vert k-1}$
-- state update: $\hat{x}_{k-1 \vert k-1} \to \hat{x}_{k \vert k-1}$
-- incorporate noise, updated covariance: $\hat{x}_{k \vert k-1} \to \hat{x}_{k \vert k}$
-- measurement at $k$: $\hat{x}_{k \vert k}$
+- measurement at $$k-1$$: $$\hat{x}_{k-1 \vert k-1}$$
+- state update: $$\hat{x}_{k-1 \vert k-1} \to \hat{x}_{k \vert k-1}$$
+- incorporate noise, updated covariance: $$\hat{x}_{k \vert k-1} \to \hat{x}_{k \vert k}$$
+- measurement at $$k$$: $$\hat{x}_{k \vert k}$$
 
 ## Kalman Filter Algorithm
 
@@ -69,27 +69,28 @@ $$
 
 - Measurement update:
 $$
-K_k &= P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + R)^{-1},
-\\
-\hat{x}_{k \vert k} &= \hat{x}_{k \vert k-1}  + K_k (z_k - H \hat{x}_{k \vert k-1}),
-\\
-P_{k \vert k} &= (\mathbb{I} - K_k H) P_{k \vert k-1}
+K_k = P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + R)^{-1}
+$$
+$$
+\hat{x}_{k \vert k} = \hat{x}_{k \vert k-1}  + K_k (z_k - H \hat{x}_{k \vert k-1})
+$$
+$$
+P_{k \vert k} = (\mathbb{I} - K_k H) P_{k \vert k-1}
 $$
 
 where we can abbreviate the factors:
 
-$$
-S = H P_{k \vert k-1} H^T + R
-\\
-y = z_k - H \hat{x}_{k \vert k-1}
-$$
+- $$S = H P_{k \vert k-1} H^T + R$$
+- $$y = z_k - H \hat{x}_{k \vert k-1}$$
   
 
 ### Kalman-Filter: Estimation from Observed Measurements
 To simulate observed measurements, we take the Hohmann transfer $$x_{h}, y_{h}$$ vectors of positions and add a Gaussian noise with arbitrary variance $$\sigma^2$$:
 
 $$
-x_{\text{obs}} = x_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) \\
+x_{\text{obs}} = x_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2)
+$$
+$$
 y_{\text{obs}} = y_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) 
 $$
 
@@ -149,13 +150,13 @@ $$
 The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
 
 $$
-\hat{x}_{k \vert k-1} &= \underbrace{A}_{
+\hat{x}_{k \vert k-1} = \underbrace{A}_{
 \text{state update }x, \dot{x}, \ddot{x}
 } \hat{x}_{k-1 \vert k-1},
 \\
 \underbrace{P_{k \vert k-1}}_{
 \text{update covariance, uncertainty of estimate}
-} &= A P_{k-1 \vert k-1}A^T + \underbrace{Q}_{
+} = A P_{k-1 \vert k-1}A^T + \underbrace{Q}_{
 \text{add process noise, uncertainty of dynamics}
 }
 $$
@@ -167,28 +168,28 @@ $$
 The measurement update step updates the measures from $k \vert k-1$ to $k \vert k$:
 
 $$
-    \underbrace{K_k}_{
-        \text{Kalman gain}
-        } 
-    &= P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T 
-    + \underbrace{R}_{
-        \text{measurement noise}
-        }
-    )^{-1},
-    \\
-    \hat{x}_{k \vert k} &= \hat{x}_{k \vert k-1}  + K_k (\underbrace{z_k}_{
-        \text{measurement vector}
-        } 
-    - H \hat{x}_{k \vert k-1}),
-    \\
-    P_{k \vert k} &= (\mathbb{I} - K_k H) P_{k \vert k-1}.
+\underbrace{K_k}_{
+    \text{Kalman gain}
+    } 
+= P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T 
++ \underbrace{R}_{
+    \text{measurement noise}
+    }
+)^{-1},
+\\
+\hat{x}_{k \vert k} = \hat{x}_{k \vert k-1}  + K_k (\underbrace{z_k}_{
+    \text{measurement vector}
+    } 
+- H \hat{x}_{k \vert k-1}),
+\\
+P_{k \vert k} = (\mathbb{I} - K_k H) P_{k \vert k-1}.
 $$
 
-where $z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$.
+where $$z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$$.
 
 ### Kalman-Filter: Using Pre-Computed Values
 
- Using pre-computed velocities $\{ v_k \}_k$:
+Using pre-computed velocities $$\{ v_k \}_k$$:
  
 $$
 \begin{cases}
@@ -230,7 +231,7 @@ $$
     \caption{Illustration of KF velocity estimate.}
     % \label{fig:enter-label}
 \end{figure} -->
-<img src="/images/kf_vel_approx_photo.png" />
+<img src="/images/kf_vel_approx_photo.png" height="300" />
 
 -  Given the KF estimated positions, we can approximate the velocities, with the simple derivative.
 -  It is assumed that the acceleration is incorporated in each velocity step.
@@ -281,8 +282,8 @@ The presence of noise is noticeable in the velocity estimates.
 <img src="/images/qqplot_pos_error.png" />
 <img src="/images/qqplot_vel_error.png" />
 
--  D'agostino and Pearson normality test results for the position errors: $\text{Test Statistic}=1.642$, and $p=0.440$.
--  For a significance value of $\alpha=0.05$, we fail to reject H0, so we infer normality, since $p>\alpha$.
+-  D'agostino and Pearson normality test results for the position errors: $$\text{Test Statistic}=1.642$$, and $$p=0.440$$.
+-  For a significance value of $$\alpha=0.05$$, we fail to reject H0, so we infer normality, since $$p>\alpha$$.
 
 ## Kalman-Filter: Simulation Parameters
 <!-- \parencite{sheldon_applied_prob} -->
@@ -308,13 +309,9 @@ H = \begin{bmatrix}
 \end{bmatrix} 
 $$
 
-$$
-    Q = \sigma_Q^2 \cdot \mathbb{I}_{4 \times 4}, 
-    & \quad \text{(process noise, dynamics uncertainty)}\\
-    R = \sigma_R^2 \cdot \mathbb{I}_{2 \times 2}, 
-    & \quad\text{(measurement noise)}\\
-    P = \sigma_P^2 \cdot \mathbb{I}_{4 \times 4}, 
-    & \quad\text{(estimates uncertainty)}
-$$
+- $$Q = \sigma_Q^2 \cdot \mathbb{I}_{4 \times 4}$$ (process noise, dynamics uncertainty)
+- $$R = \sigma_R^2 \cdot \mathbb{I}_{2 \times 2}$$ (measurement noise)
+- $$P = \sigma_P^2 \cdot \mathbb{I}_{4 \times 4}$$ (estimates uncertainty)
+- 
 with $$\sigma_Q^2 = 10^{-3}$, $\sigma_R^2 = 0.5$, and $\sigma_P^2 = 500$$.
 
