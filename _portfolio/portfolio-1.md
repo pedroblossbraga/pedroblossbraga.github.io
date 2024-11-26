@@ -1,6 +1,6 @@
 ---
 title: "Lead Conversion model"
-excerpt: "Imbalanced Classification of Lead Conversion.<br/><img src='/images/lead conversion model.png'>"
+excerpt: "Imbalanced Classification of Lead Conversion.<br/><img src='/images/lead_conversion_model.png'>"
 collection: portfolio
 ---
 
