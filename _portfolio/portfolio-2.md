@@ -149,7 +149,7 @@ $$
 ### Kalman-Filter: State Update
 <!-- \parencite{NASA_Kalman_Filter}  \parencite{WelchB95} -->
 
-The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
+The state update step updates the dynamics from $$k-1 \vert k-1$$ to $$k \vert k-1$$:
 
 $$
 \hat{x}_{k \vert k-1} = \underbrace{A}_{
@@ -224,7 +224,7 @@ $$
     \caption{Illustration of KF velocity estimate.}
     % \label{fig:enter-label}
 \end{figure} -->
-<img src="/images/kf_vel_approx_photo.png" height="300" />
+<img src="/images/kf_vel_approx_photo.png" width="200" height="200" />
 
 -  Given the KF estimated positions, we can approximate the velocities, with the simple derivative.
 -  It is assumed that the acceleration is incorporated in each velocity step.
@@ -259,8 +259,8 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Distribution of error estimates (Euclidean norm).}
     % \label{fig:kf_ht_vel_residuals}
 \end{figure} -->
-<img src="/images/kf_pos_approx_photo.png"  />
-<img src="/images/vel_error_dist.png" />
+<img src="/images/kf_pos_approx_photo.png" width="200" height="200" />
+<img src="/images/vel_error_dist.png" width="200" height="200" />
 
 
 ### Estimated KF Velocities Error
@@ -272,8 +272,8 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Q-Q plot of error distributions.}
     % \label{fig:kf_ht_vel_residuals_qqplot}
 \end{figure} -->
-<img src="/images/qqplot_pos_error.png" />
-<img src="/images/qqplot_vel_error.png" />
+<img src="/images/qqplot_pos_error.png" width="200" height="200" />
+<img src="/images/qqplot_vel_error.png" width="200" height="200" />
 
 -  D'agostino and Pearson normality test results for the position errors: $$\text{Test Statistic}=1.642$$, and $$p=0.440$$.
 -  For a significance value of $$\alpha=0.05$$, we fail to reject H0, so we infer normality, since $$p>\alpha$$.
