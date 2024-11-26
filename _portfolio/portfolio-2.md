@@ -259,8 +259,8 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Distribution of error estimates (Euclidean norm).}
     % \label{fig:kf_ht_vel_residuals}
 \end{figure} -->
-<img src="/images/kf_pos_approx_photo.png" width="200" height="200" />
-<img src="/images/vel_error_dist.png" width="200" height="200" />
+<img src="/images/kf_pos_approx_photo.png" width="300" height="300" />
+<img src="/images/vel_error_dist.png" width="300" height="300" />
 
 
 ### Estimated KF Velocities Error
@@ -272,8 +272,8 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Q-Q plot of error distributions.}
     % \label{fig:kf_ht_vel_residuals_qqplot}
 \end{figure} -->
-<img src="/images/qqplot_pos_error.png" width="200" height="200" />
-<img src="/images/qqplot_vel_error.png" width="200" height="200" />
+<img src="/images/qqplot_pos_error.png" width="300" height="300" />
+<img src="/images/qqplot_vel_error.png" width="300" height="300" />
 
 -  D'agostino and Pearson normality test results for the position errors: $$\text{Test Statistic}=1.642$$, and $$p=0.440$$.
 -  For a significance value of $$\alpha=0.05$$, we fail to reject H0, so we infer normality, since $$p>\alpha$$.
