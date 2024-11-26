@@ -58,9 +58,10 @@ Given observed positions, and taking into account the dynamics $$(x, \dot{x}, \d
 - incorporate noise, updated covariance: $$\hat{x}_{k \vert k-1} \to \hat{x}_{k \vert k}$$
 - measurement at $$k$$: $$\hat{x}_{k \vert k}$$
 
-## Kalman Filter Algorithm
+## Kalman Filter Algorithm Framework
 
 - State update:
+
 $$
 \hat{x}_{k \vert k-1} = A \hat{x}_{k-1 \vert k-1},
 \\
@@ -68,6 +69,7 @@ P_{k \vert k-1} = A P_{k-1 \vert k-1}A^T + Q
 $$
 
 - Measurement update:
+  
 $$
 K_k = P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + R)^{-1}
 $$
@@ -166,27 +168,15 @@ $$
 <!--     \parencite{NASA_Kalman_Filter}
     \parencite{WelchB95} -->
 
-The measurement update step updates the measures from $k \vert k-1$ to $k \vert k$:
+The measurement update step updates the measures from $$k \vert k-1$$ to $$k \vert k$$:
 
-$$
-\underbrace{K_k}_{
+$$\underbrace{K_k}_{
     \text{Kalman gain}
-    } 
-= P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T 
-+ \underbrace{R}_{
-    \text{measurement noise}
-    }
-)^{-1},
-$$
-$$
-\hat{x}_{k \vert k} = \hat{x}_{k \vert k-1}  + K_k (\underbrace{z_k}_{
-    \text{measurement vector}
-    } 
-- H \hat{x}_{k \vert k-1}),
-$$
-$$
-P_{k \vert k} = (\mathbb{I} - K_k H) P_{k \vert k-1}.
-$$
+    } = P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + \underbrace{R}_{\text{measurement noise}})^{-1}$$
+
+$$\hat{x}_{k \vert k} = \hat{x}_{k \vert k-1}  + K_k (\underbrace{z_k}_{\text{measurement vector}} - H\hat{x}_{k \vert k-1})$$
+
+$$P_{k \vert k} = (\mathbb{I} - K_k H) P_{k \vert k-1}$$
 
 where $$z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$$.
 
