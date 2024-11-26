@@ -4,8 +4,7 @@ excerpt: "Project presented for the Modeling Simulation and Optimization FAU Sum
 collection: portfolio
 ---
 
-
-<img src="images/sim_KF_precomp_velocities_dt14.gif" alt="KF simulation"  width="250" />
+<img src="/images/sim_KF_precomp_velocities_dt14.gif" alt="KF simulation"  width="250" />
 
 This project was presented for the Modeling Simulation and Optimization FAU Summer Semester 2024 master's course. 
 
@@ -41,7 +40,7 @@ Examples:
 ### Kalman-Filter: Predicting the Next Position
 <!-- \parencite{KALMAN} \parencite{how_NASA_used_the_KF_Apollo} -->
 
-Given observed positions, and taking into account the dynamics $(x, \dot{x}, \ddot{x})$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
+Given observed positions, and taking into account the dynamics $x$, $\dot{x}$, $\ddot{x})$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
 
 ### Kalman-Filter: Embedding Uncertainty
 <!-- \parencite{KALMAN} \parencite{sheldon_applied_prob} -->
@@ -54,19 +53,34 @@ Given observed positions, and taking into account the dynamics $(x, \dot{x}, \dd
 ### Kalman-Filter: Notation
 <!-- \parencite{KALMAN} -->
 
+- measurement at $k-1$: $\hat{x}_{k-1|k-1}$
+- state update: $\hat{x}_{k-1|k-1} \to \hat{x}_{k|k-1}$
+- incorporate noise, updated covariance: $\hat{x}_{k|k-1} \to \hat{x}_{k|k}$
+- measurement at $k$: $\hat{x}_{k|k}$
+
+## Kalman Filter Algorithm
+
+- State update:
 \begin{align}
-    \underbrace{\hat{x}_{k-1|k-1}}_{\text{measurement at } k-1}
-    \underbrace{\to}_{
-    \text{state update (velocities, position, etc)}
-    }
-    \hat{x}_{k|k-1} 
-    \underbrace{\to}_{
-        \text{incorporate noise, updated covariance}
-    } 
-    \underbrace{\hat{x}_{k|k}}_{
-    \text{measurement at } k
-    }
+\hat{x}_{k|k-1} = A \hat{x}_{k-1|k-1},
+\\
+P_{k|k-1} = A P_{k-1|k-1}A^T + Q
 \end{align}
+
+\ii Measurement update:
+\begin{align}
+    K_k &= P_{k|k-1} H^T (H P_{k|k-1} H^T + R)^{-1},
+    \\
+    \hat{x}_{k|k} &= \hat{x}_{k|k-1}  + K_k (z_k - H \hat{x}_{k|k-1}),
+    \\
+    P_{k|k} &= (\mathbb{I} - K_k H) P_{k|k-1}
+\end{align}
+
+where we can abbreviate the factors:
+- $S = H P_{k|k-1} H^T + R$
+- $y = z_k - H \hat{x}_{k|k-1}$
+  
+
 
 ### Kalman-Filter: Estimation from Observed Measurements
 To simulate observed measurements, we take the Hohmann transfer $x_{h}, y_{h}$ vectors of positions and add a Gaussian noise with arbitrary variance $\sigma^2$:
