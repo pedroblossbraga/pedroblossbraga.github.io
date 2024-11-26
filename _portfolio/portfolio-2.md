@@ -1,8 +1,9 @@
 ---
 title: "Space Flight Trajectory prediction via Kalman-Filter"
-excerpt: "Project presented for the Modeling Simulation and Optimization FAU SummerSemester 2024 course<br/><img src='/images/animation_ht_kf_frame3.png'>"
+excerpt: "Project presented for the Modeling Simulation and Optimization FAU SummerSemester 2024 course<br/><img src='/images/sim_KF_precomp_velocities_dt14.gif'>"
 collection: portfolio
 ---
+<!-- animation_ht_kf_frame3.png -->
 
 <img src="/images/sim_KF_precomp_velocities_dt14.gif" alt="KF simulation"  width="500" height="500" />
 
