@@ -63,8 +63,10 @@ Given observed positions, and taking into account the dynamics $$(x, \dot{x}, \d
 - State update:
 
 $$
-\hat{x}_{k \vert k-1} = A \hat{x}_{k-1 \vert k-1},
-\\
+\hat{x}_{k \vert k-1} = A \hat{x}_{k-1 \vert k-1}
+$$
+
+$$
 P_{k \vert k-1} = A P_{k-1 \vert k-1}A^T + Q
 $$
 
@@ -73,9 +75,11 @@ $$
 $$
 K_k = P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + R)^{-1}
 $$
+
 $$
 \hat{x}_{k \vert k} = \hat{x}_{k \vert k-1}  + K_k (z_k - H \hat{x}_{k \vert k-1})
 $$
+
 $$
 P_{k \vert k} = (\mathbb{I} - K_k H) P_{k \vert k-1}
 $$
