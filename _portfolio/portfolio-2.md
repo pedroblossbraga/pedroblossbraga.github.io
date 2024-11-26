@@ -47,9 +47,9 @@ Given observed positions, and taking into account the dynamics $$(x, \dot{x}, \d
 ### Kalman-Filter: Embedding Uncertainty
 <!-- \parencite{KALMAN} \parencite{sheldon_applied_prob} -->
 
-- $Q$: Process noise covariance, uncertainty about the system **dynamics**.
-- $R$: **Measurement** noise covariance.
-- $P$: **Initial estimate** covariance, uncertainty of initial estimate.
+- $$Q$$: Process noise covariance, uncertainty about the system **dynamics**.
+- $$R$$: **Measurement** noise covariance.
+- $$P$$: **Initial estimate** covariance, uncertainty of initial estimate.
 
 
 ### Kalman-Filter: Notation
@@ -96,6 +96,7 @@ To simulate observed measurements, we take the Hohmann transfer $$x_{h}, y_{h}$$
 $$
 x_{\text{obs}} = x_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2)
 $$
+
 $$
 y_{\text{obs}} = y_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) 
 $$
@@ -160,6 +161,7 @@ $$
 \text{state update }x, \dot{x}, \ddot{x}
 } \hat{x}_{k-1 \vert k-1},
 $$
+
 $$
 \underbrace{P_{k \vert k-1}}_{
 \text{update covariance, uncertainty of estimate}
@@ -298,7 +300,7 @@ H = \begin{bmatrix}
     1 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 \\
 \end{bmatrix}
-$$
+$$,
 $$
 \hat{x} = \begin{bmatrix}
     x_k \\ y_k \\ \dot{x}_k \\ \dot{y}_k
