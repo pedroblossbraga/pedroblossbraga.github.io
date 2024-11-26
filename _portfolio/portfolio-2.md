@@ -41,7 +41,7 @@ Examples:
 ### Kalman-Filter: Predicting the Next Position
 <!-- \parencite{KALMAN} \parencite{how_NASA_used_the_KF_Apollo} -->
 
-Given observed positions, and taking into account the dynamics $x$, $\dot{x}$, $\ddot{x})$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
+Given observed positions, and taking into account the dynamics $$x, \dot{x}, \ddot{x})$$, **we want a method that can accurately estimate the next position**, considering perturbations in our system.
 
 ### Kalman-Filter: Embedding Uncertainty
 <!-- \parencite{KALMAN} \parencite{sheldon_applied_prob} -->
@@ -68,40 +68,45 @@ $$
 
 - Measurement update:
 $$
-    K_k &= P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + R)^{-1},
-    \\
-    \hat{x}_{k \vert k} &= \hat{x}_{k \vert k-1}  + K_k (z_k - H \hat{x}_{k \vert k-1}),
-    \\
-    P_{k \vert k} &= (\mathbb{I} - K_k H) P_{k \vert k-1}
+K_k &= P_{k \vert k-1} H^T (H P_{k \vert k-1} H^T + R)^{-1},
+\\
+\hat{x}_{k \vert k} &= \hat{x}_{k \vert k-1}  + K_k (z_k - H \hat{x}_{k \vert k-1}),
+\\
+P_{k \vert k} &= (\mathbb{I} - K_k H) P_{k \vert k-1}
 $$
+
 where we can abbreviate the factors:
-- $S = H P_{k \vert k-1} H^T + R$
-- $y = z_k - H \hat{x}_{k \vert k-1}$
+
+$$
+S = H P_{k \vert k-1} H^T + R
+\\
+y = z_k - H \hat{x}_{k \vert k-1}
+$$
   
 
 ### Kalman-Filter: Estimation from Observed Measurements
-To simulate observed measurements, we take the Hohmann transfer $x_{h}, y_{h}$ vectors of positions and add a Gaussian noise with arbitrary variance $\sigma^2$:
+To simulate observed measurements, we take the Hohmann transfer $$x_{h}, y_{h}$$ vectors of positions and add a Gaussian noise with arbitrary variance $$\sigma^2$$:
 
-\begin{align}
-    x_{\text{obs}} = x_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) \\
-    y_{\text{obs}} = y_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) 
-\end{align}
+$$
+x_{\text{obs}} = x_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) \\
+y_{\text{obs}} = y_{\text{Hohmann}} + n, \quad n \in \mathcal{N}(0, \sigma^2) 
+$$
 
 ### How does the Kalman-Filter takes into account the state?
 Example with nonconstant velocity, and constant acceleration:
 
-\begin{align}
+$$
 \begin{cases}
     \hat{x}_{k+1,k} = \hat{x}_{k,k} + \hat{\dot{x}}_{k,k} \Delta t + \frac{1}{2} \hat{\ddot{x}}_{k,k} \Delta t^2 
     \\
     \hat{\dot{x}}_{k+1, k} = \hat{\dot{x}}_{k,k} + \hat{\ddot{x}}_{k,k} \Delta t \\
     \hat{\ddot{x}}_{k+1, k} = \hat{\ddot{x}}_{k, k} \\
-\end{cases}.
-\end{align}
+\end{cases}
+$$
 
 Then, the state update is:
 
-\begin{align}
+$$
 \begin{bmatrix}
     \hat{x}_{k+1, k} \\
     \hat{\dot{x}}_{k+1, k} \\
@@ -124,8 +129,8 @@ Then, the state update is:
     \hat{y}_{k, k} \\
     \hat{\dot{y}}_{k, k} \\
     \hat{\ddot{y}}_{k, k} \\
-\end{bmatrix}.
-\end{align}
+\end{bmatrix}
+$$
 
 ### Kalman-Filter: Including Hohmann Transfer Positions and Velocities
 
@@ -142,17 +147,17 @@ Then, the state update is:
 
 The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
 
-\begin{align}
-\hat{x}_{k|k-1} &= \underbrace{A}_{
+$$
+\hat{x}_{k \vert k-1} &= \underbrace{A}_{
 \text{state update }x, \dot{x}, \ddot{x}
-} \hat{x}_{k-1|k-1},
+} \hat{x}_{k-1 \vert k-1},
 \\
-\underbrace{P_{k|k-1}}_{
+\underbrace{P_{k \vert k-1}}_{
 \text{update covariance, uncertainty of estimate}
-} &= A P_{k-1|k-1}A^T + \underbrace{Q}_{
+} &= A P_{k-1 \vert k-1}A^T + \underbrace{Q}_{
 \text{add process noise, uncertainty of dynamics}
-}.
-\end{align}
+}
+$$
 
 ### Kalman-Filter: Measurement Update
 <!--     \parencite{NASA_Kalman_Filter}
@@ -160,7 +165,7 @@ The state update step updates the dynamics from $k-1|k-1$ to $k|k-1$:
 
 The measurement update step updates the measures from $k \vert k-1$ to $k \vert k$:
 
-\begin{align}
+$$
     \underbrace{K_k}_{
         \text{Kalman gain}
         } 
@@ -176,7 +181,7 @@ The measurement update step updates the measures from $k \vert k-1$ to $k \vert 
     - H \hat{x}_{k \vert k-1}),
     \\
     P_{k \vert k} &= (\mathbb{I} - K_k H) P_{k \vert k-1}.
-\end{align}
+$$
 
 where $z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$.
 
@@ -184,18 +189,18 @@ where $z_k = (x_k^{\text{(obs)}}, y_k^{\text{(obs)}})$.
 
  Using pre-computed velocities $\{ v_k \}_k$:
  
-\begin{align}
+$$
 \begin{cases}
     \hat{x}_{k+1,k} = \hat{x}_{k,k} + \color{red}{v_k}  \color{black} \Delta t 
     \\
     \hat{\dot{x}}_{k+1, k} = \color{red}{v_{k+1}}  \color{black} \\
     \text{ same for } (y, \dot{y})
-\end{cases}.
-\end{align}
+\end{cases}
+$$
 
 Then, the state update is:
 
-\begin{align}
+$$
 \begin{bmatrix}
     \hat{x}_{k+1, k} \\
     \hat{y}_{k+1, k} \\
@@ -213,8 +218,8 @@ Then, the state update is:
     \hat{y}_{k, k} \\
     \color{red}{v^{(x)}_{k+1, k}}  \color{black} \\
     \color{red}{v^{(y)}_{k+1, k}}  \color{black} \\
-\end{bmatrix}.
-\end{align}
+\end{bmatrix}
+$$
 
 ### Estimating the Actual Kalman-Filter Velocity
 
@@ -224,7 +229,7 @@ Then, the state update is:
     \caption{Illustration of KF velocity estimate.}
     % \label{fig:enter-label}
 \end{figure} -->
-<img src="/images/kf_vel_approx_photo.png" width="250" />
+<img src="/images/kf_vel_approx_photo.png" />
 
 -  Given the KF estimated positions, we can approximate the velocities, with the simple derivative.
 -  It is assumed that the acceleration is incorporated in each velocity step.
@@ -236,7 +241,7 @@ Then, the state update is:
     \caption{Kalman-Filter estimated velocities and Hohmann Transfer velocities}
     % \label{fig:kf_ht_vel}
 \end{figure} -->
-<img src="/images/kf_ht_velocities.png" width="250" />
+<img src="/images/kf_ht_velocities.png" />
 
 
 The presence of noise is noticeable in the velocity estimates.
@@ -248,7 +253,7 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Kalman-Filter estimated velocities and Hohmann Transfer velocities, with KF linear regression}
     % \label{fig:kf_ht_vel_and_reg}
 \end{figure} -->
-<img src="/images/kf_vel_reg.png" width="250" />
+<img src="/images/kf_vel_reg.png" />
 
 ### Estimated KF velocities error
 <!-- }{\parencite{celebi2011euclidean} -->
@@ -259,8 +264,8 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Distribution of error estimates (Euclidean norm).}
     % \label{fig:kf_ht_vel_residuals}
 \end{figure} -->
-<img src="/images/kf_pos_approx_photo.png" width="250" />
-<img src="/images/vel_error_dist.png" width="250" />
+<img src="/images/kf_pos_approx_photo.png"  />
+<img src="/images/vel_error_dist.png" />
 
 
 ### Estimated KF Velocities Error
@@ -272,8 +277,8 @@ The presence of noise is noticeable in the velocity estimates.
     \caption{Q-Q plot of error distributions.}
     % \label{fig:kf_ht_vel_residuals_qqplot}
 \end{figure} -->
-<img src="/images/qqplot_pos_error.png" width="250" />
-<img src="/images/qqplot_vel_error.png" width="250" />
+<img src="/images/qqplot_pos_error.png" />
+<img src="/images/qqplot_vel_error.png" />
 
 -  D'agostino and Pearson normality test results for the position errors: $\text{Test Statistic}=1.642$, and $p=0.440$.
 -  For a significance value of $\alpha=0.05$, we fail to reject H0, so we infer normality, since $p>\alpha$.
@@ -281,7 +286,7 @@ The presence of noise is noticeable in the velocity estimates.
 ## Kalman-Filter: Simulation Parameters
 <!-- \parencite{sheldon_applied_prob} -->
 
-\begin{align}
+$$
 A = \begin{bmatrix}
 1 & 0 & \Delta t & 0 \\
 0 & 1 & 0 & \Delta t \\
@@ -300,15 +305,15 @@ H = \begin{bmatrix}
 = \begin{bmatrix}
     x_k \\ y_k \\ v^{(x)}_k \\ v^{(y)}_k
 \end{bmatrix} 
-\end{align}
+$$
 
-\begin{align}
+$$
     Q = \sigma_Q^2 \cdot \mathbb{I}_{4 \times 4}, 
     & \quad \text{(process noise, dynamics uncertainty)}\\
     R = \sigma_R^2 \cdot \mathbb{I}_{2 \times 2}, 
     & \quad\text{(measurement noise)}\\
     P = \sigma_P^2 \cdot \mathbb{I}_{4 \times 4}, 
     & \quad\text{(estimates uncertainty)}
-\end{align}
-with $\sigma_Q^2 = 10^{-3}$, $\sigma_R^2 = 0.5$, and $\sigma_P^2 = 500$.
+$$
+with $$\sigma_Q^2 = 10^{-3}$, $\sigma_R^2 = 0.5$, and $\sigma_P^2 = 500$$.
 
