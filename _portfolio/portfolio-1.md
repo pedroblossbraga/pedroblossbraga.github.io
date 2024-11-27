@@ -4,4 +4,8 @@ excerpt: "Imbalanced Classification of Lead Conversion.<br/><img src='/images/le
 collection: portfolio
 ---
 
+<img src='/images/lead_conversion_pipeline.png'>
+
 In this project, I built a Machine Learning model to estimate the probability of conversion of potential customers (leads), with Imbalanced Learning techniques, and producing an increase in the conversion rate of up to 3x in the first month in production.
+
+<img src='/images/lead_conversion_model.png'>
