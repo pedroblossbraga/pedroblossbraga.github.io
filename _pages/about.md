@@ -15,4 +15,4 @@ Additionally, I have over five years of professional experience as a data scient
 
 Interests
 ======
-My areas of interest include PDEs, nonlinear optimization, dynamical systems, modelling, and the intersection of AI and applied mathematics.
+My areas of interest include PDEs, nonlinear optimization, dynamical systems, modelling, Finance, and the intersection of AI and applied mathematics.
