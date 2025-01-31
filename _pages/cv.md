@@ -26,8 +26,10 @@ Work experience
 ======
 * Metatimbre AI: Partner
   * Leading  AI solutions, mainly with Natural Language Processing (NLP) and Computer Vision, with applications in pattern detection in voice, traffic safety, and others.
+  * We’ve built the first AI in Brazil that detects and quantifies alcohol consumption through speech, with 82.9% accuracy, using hundreds of parameters.
 
 * Window Finance: Data Scientist
+  * Implemented trading strategies and backtests with traditional and novel models.
   * Developed AI pipelines to identify investment opportunities and predict financial indicators.
   * Collaborated on building decentralized finance platforms.
   * Tech Stack: Python, Prefect, SQL, TensorFlow, scikit-learn, Google Cloud, Docker.
