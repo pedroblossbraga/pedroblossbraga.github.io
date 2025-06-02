@@ -12,7 +12,9 @@ redirect_from:
 Education
 ======
 * M.S. in M.Sc. Computational and Applied Mathematics (CAM) - Friedrich-Alexander Universität (FAU), Erlangen, Germany, 2025 (expected)
+  * Thesis: Convergence of lower bounds on optimal cooling. (In progress) 
   * Specialization in Optimization and Numerical Analysis
+  * Research Areas: Analysis of PDEs, Nonlinear Optimization, Dynamical Systems, AI
 * B.S. in B.ASc. Applied and Computational Mathematics - University of São Paulo (USP), São Paulo, Brazil, 2022
   * Thesis: "Support Vector Machines: Classification, Kernels, Regression, and Optimization"
   * Thesis Abstract: Study variants of the Support Vector Machine (SVM) algorithm, deriving the classification formulations C-SVC and ν-SVC, the regression formulations ε-SVR and ν-SVR, in their linear or kernelized forms, with convex optimization techniques, such as the Lagrangian, to build the dual optimization form; kernel properties, reproducing kernel maps and Hilbert spaces; and implementation of examples in Python.
@@ -24,6 +26,9 @@ Education
 
 Work experience
 ======
+* FAU - Image and Data Exploration Lab (IDEA lab): Student Research Assistant
+  * Optimization of Text-conditioned Diffusion models for pelvic MRI images.
+ 
 * Metatimbre AI: Partner
   * Leading  AI solutions, mainly with Natural Language Processing (NLP) and Computer Vision, with applications in pattern detection in voice, traffic safety, and others.
   * We’ve built the first AI in Brazil that detects and quantifies alcohol consumption through speech, with 82.9% accuracy, using hundreds of parameters.
