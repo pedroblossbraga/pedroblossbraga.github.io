@@ -11,11 +11,12 @@ redirect_from:
 
 Education
 ======
-* M.S. in M.Sc. Computational and Applied Mathematics (CAM) - Friedrich-Alexander Universität (FAU), Erlangen, Germany, 2025 (expected)
-  * Thesis: Convergence of lower bounds on optimal cooling. (In progress) 
+* PhD (doctoral studies)  - Friedrich-Alexander Universität (FAU), Erlangen, Germany, (in progress).
+* Master of Science (M.Sc.) in Computational and Applied Mathematics (CAM) - Friedrich-Alexander Universität (FAU), Erlangen, Germany, 2025.
+  * Thesis: Convergence of lower bounds on optimal cooling.
   * Specialization in Optimization and Numerical Analysis
   * Research Areas: Analysis of PDEs, Nonlinear Optimization, Dynamical Systems, AI
-* B.S. in B.ASc. Applied and Computational Mathematics - University of São Paulo (USP), São Paulo, Brazil, 2022
+* Bachelor of Science (B.Sc.) in Applied and Computational Mathematics - University of São Paulo (USP), São Paulo, Brazil, 2022
   * Thesis: "Support Vector Machines: Classification, Kernels, Regression, and Optimization"
   * Thesis Abstract: Study variants of the Support Vector Machine (SVM) algorithm, deriving the classification formulations C-SVC and ν-SVC, the regression formulations ε-SVR and ν-SVR, in their linear or kernelized forms, with convex optimization techniques, such as the Lagrangian, to build the dual optimization form; kernel properties, reproducing kernel maps and Hilbert spaces; and implementation of examples in Python.
   * Thesis Advisor: Nina S. T. Hirata, PhD.
@@ -26,6 +27,7 @@ Education
 
 Work experience
 ======
+* PhD Researcher at the chair for Dynamics, Control, Machine Learning and Numerics at FAU Friedrich-Alexander-Universität Erlangen-Nürnberg, under the supervision of Prof. Hannes Meinlschmidt. Topic: Optimal Control for Renormalized Solutions of Evolution Equations.
 * FAU - Image and Data Exploration Lab (IDEA lab): Student Research Assistant
   * Optimization of Text-conditioned Diffusion models for pelvic MRI images.
  
