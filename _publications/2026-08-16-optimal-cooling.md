@@ -6,7 +6,7 @@ permalink: /publication/2026-08-16-optimal-cooling
 excerpt: ''
 date: 2026-08-16
 venue: 'arXiv preprint arXiv:2608.14334 (2026)'
-slidesurl: ''
+slidesurl: 'https://arxiv.org/pdf/2608.14334'
 paperurl: 'https://arxiv.org/pdf/2608.14334'
 citation: 'Braga, Pedro Blöss, and Giovanni Fantuzzi.&quot; <i>arXiv preprint arXiv:2608.14334 (2026).</i>'
 ---
